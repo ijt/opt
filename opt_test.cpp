@@ -14,14 +14,14 @@ public:
         c = c_in;
     }
 
-    // Value of the parabola at a point x
+    // Value of the parabola at a point p
     double val(Opt::Vector p) const {
         double x = p.v[0];
         return a*x*x + b*x + c;
     }
 
-    // Gradient of the parabola at a point x.
-    // This is just a 1D vector
+    // Gradient of the parabola at a point p.
+    // This is just a 1D vector.
     Opt::Vector grad(Opt::Vector p) const {
         double x = p.v[0];
         return Opt::Vector(2.0*a*x + b);        

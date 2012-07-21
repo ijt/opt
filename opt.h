@@ -35,7 +35,7 @@ public:
 
 class GradientDescentMinimizer {
 public: 
-    GradientDescentMinimizer(const Function* f, Vector init);
+    GradientDescentMinimizer(const Function& f, Vector init);
 
     // Take a single step in the opposite direction of the
     // gradient.
@@ -45,7 +45,7 @@ public:
     Vector point() const;
 private:
     Vector p;
-    const Function* f;
+    const Function& f;
 };
 
 }

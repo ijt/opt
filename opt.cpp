@@ -35,17 +35,17 @@ double Vector::length() const
 }
 
 GradientDescentMinimizer::GradientDescentMinimizer(
-        const Function* f_in,
-        Vector init)
+        const Function& f_in,
+        Vector init):
+    f(f_in),
+    p(init)
 {
-    f = f_in;
-    p = init;
 }
 
 void GradientDescentMinimizer::step(double step_size)
 {
     // p = p - step_size * g;
-    Vector g = f->grad(p);
+    Vector g = f.grad(p);
     int I = p.v.size();
     for (int i = 0; i < I; i++)
     {

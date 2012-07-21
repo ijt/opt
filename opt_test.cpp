@@ -50,7 +50,7 @@ TEST(GradientDescentTestSuite, parabolaTestCase)
 
         // Set up a minimizer with initial point between 0 and 10.
         Opt::Vector init(10.0 * drand48());
-        Opt::GradientDescentMinimizer o(&p, init);
+        Opt::GradientDescentMinimizer o(p, init);
         while (true) {
             double grad_len2 = p.grad(o.point()).length2();
             if (grad_len2 < 1e-6*1e-6) {
